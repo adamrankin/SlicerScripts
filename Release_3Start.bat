@@ -1,1 +1,1 @@
-.\S4R\Slicer-build\Slicer.exe
+call ./Common/Common_Start.bat R

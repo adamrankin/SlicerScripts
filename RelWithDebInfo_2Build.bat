@@ -1,5 +1,3 @@
-pushd S4RD
-cmake --build . --config RelWithDebInfo
-popd
+call ./Common/Common_Build.bat RD RelWithDebInfo
 
 pause

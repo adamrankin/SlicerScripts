@@ -1,0 +1,1 @@
+call ./Common/Common_Start.bat RD

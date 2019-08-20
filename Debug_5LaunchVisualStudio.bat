@@ -1,1 +1,1 @@
-.\S4D\Slicer-build\Slicer.exe --VisualStudioProject --launcher-no-splash .\S4D\Slicer-build\Slicer.sln
+call ./Common/Common_LaunchVisualStudio.bat D

@@ -1,5 +1,3 @@
-pushd S4R
-cmake --build . --config Release
-popd
+call ./Common/Common_Build.bat R Release
 
 pause

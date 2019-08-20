@@ -1,1 +1,1 @@
-.\S4D\Slicer-build\Slicer.exe --VisualStudio --launcher-no-splash --launcher-additional-settings .\SVRD\inner-build\AdditionalLauncherSettings.ini .\SVRD\inner-build\SlicerVirtualReality.sln
+call ./Common/Common_Ext_VisualStudio.bat D .\SVRD\inner-build\AdditionalLauncherSettings.ini .\SVRD\inner-build\SlicerVirtualReality.sln

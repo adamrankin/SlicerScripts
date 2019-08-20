@@ -1,1 +1,1 @@
-.\S4R\Slicer-build\Slicer.exe --VisualStudio --launcher-no-splash --launcher-additional-settings .\SVaR\AdditionalLauncherSettings.ini .\SVaR\SlicerVASST.sln
+call ./Common/Common_Ext_VisualStudio.bat R .\SVaR\AdditionalLauncherSettings.ini .\SVaR\SlicerVASST.sln

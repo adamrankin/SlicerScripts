@@ -1,1 +1,1 @@
-.\S4D\Slicer-build\Slicer.exe --VisualStudio --launcher-no-splash --launcher-additional-settings .\SOIGTD\inner-build\AdditionalLauncherSettings.ini .\SOIGTD\inner-build\SlicerOpenIGTLink.sln
+call ./Common/Common_Ext_VisualStudio.bat D .\SOIGTD\inner-build\AdditionalLauncherSettings.ini .\SOIGTD\inner-build\SlicerOpenIGTLink.sln

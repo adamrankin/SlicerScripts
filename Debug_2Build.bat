@@ -1,5 +1,3 @@
-pushd S4D
-cmake --build . --config Debug
-popd
+call ./Common/Common_Build.bat D Debug
 
 pause
