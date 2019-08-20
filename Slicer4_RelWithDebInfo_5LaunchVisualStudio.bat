@@ -1,0 +1,1 @@
+.\S4RD\Slicer-build\Slicer.exe --VisualStudioProject --launcher-no-splash .\S4RD\Slicer-build\Slicer.sln

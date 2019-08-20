@@ -1,0 +1,1 @@
+.\S4R\Slicer-build\Slicer.exe
