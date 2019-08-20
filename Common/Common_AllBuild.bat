@@ -108,7 +108,7 @@ cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/
 cmake --build . --config %2
 popd
 
-REM SlicerCamera
+REM SlicerVideoCameras
 IF EXIST SVC (
   IF [%3] == ["update"] (
     pushd SVC
@@ -119,7 +119,7 @@ IF EXIST SVC (
   git clone https://github.com/VASST/SlicerVideoCameras.git SVC
 )
 
-REM SlicerCamera build
+REM SlicerVideoCameras build
 mkdir SVC%1
 pushd SVC%1
 cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/inner-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 ../SVC
@@ -231,6 +231,24 @@ REM SlicerOsirix build
 mkdir SO%1
 pushd SO%1
 cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerRT_DIR:PATH=C:/d/Slcr/SRT%1/inner-build ../SO
+cmake --build . --config %2
+popd
+
+REM SlicerLeapMotion
+IF EXIST SL (
+  IF [%3] == ["update"] (
+    pushd SL
+    git pull origin master
+    popd
+  )
+) ELSE (
+  git clone https://github.com/VASST/SlicerLeapMotion.git SL
+)
+
+REM SlicerLeapMotion build
+mkdir SL%1
+pushd SL%1
+cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVideoCameras_DIR:PATH=C:/d/Slcr/SVC%1/ ../SL
 cmake --build . --config %2
 popd
 
