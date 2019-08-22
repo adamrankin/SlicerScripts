@@ -1,0 +1,1 @@
+call ./Common/Common_Ext_VisualStudio.bat R .\SVRR\inner-build\AdditionalLauncherSettings.ini .\SVRR\inner-build\SlicerVirtualReality.sln
