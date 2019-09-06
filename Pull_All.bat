@@ -9,6 +9,15 @@ IF EXIST S4 (
   git clone https://github.com/Slicer/Slicer.git S4
 )
 
+REM Sequences
+IF EXIST Seq (
+  pushd Seq
+  git pull origin master
+  popd
+) ELSE (
+    git clone https://github.com/SlicerRt/Sequences.git Seq
+)
+
 REM VASSTAlgorithms
 IF EXIST VA (
   pushd VA
