@@ -14,7 +14,7 @@ IF EXIST S4 (
 REM Slicer4 build
 mkdir S4%1
 pushd S4%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DQt5_DIR:PATH=D:/Qt/5.12.0/msvc2017_64/lib/cmake/Qt5 -DCMAKE_CXX_MP_FLAG:BOOL=ON ../S4
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DQt5_DIR:PATH=D:/Qt/5.13.1/msvc2017_64/lib/cmake/Qt5 -DCMAKE_CXX_MP_FLAG:BOOL=ON ../S4
 cmake --build . --config %2
 popd
 
@@ -32,7 +32,7 @@ IF EXIST VA (
 REM VASSTAlgorithms build
 mkdir VA%1
 pushd VA%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../VA
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../VA
 cmake --build . --config %2
 popd
 
@@ -50,7 +50,7 @@ IF EXIST SCV (
 REM SlicerOpenCV build
 mkdir SCV%1
 pushd SCV%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicer_CUDA_GENERATION:STRING=Pascal ../SCV
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicer_CUDA_GENERATION:STRING=Pascal ../SCV
 cmake --build . --config %2
 popd
 
@@ -68,7 +68,7 @@ IF EXIST SIGT (
 REM SlicerIGT build
 mkdir SIGT%1
 pushd SIGT%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SIGT
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SIGT
 cmake --build . --config %2
 popd
 
@@ -86,7 +86,7 @@ IF EXIST SOIGT (
 REM SlicerOpenIGTLink build
 mkdir SOIGT%1
 pushd SOIGT%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SOIGT
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SOIGT
 cmake --build . --config %2
 popd
 
@@ -104,7 +104,7 @@ IF EXIST SDT (
 REM SlicerDebuggingTools build
 mkdir SDT%1
 pushd SDT%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SDT
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SDT
 cmake --build . --config %2
 popd
 
@@ -122,7 +122,7 @@ IF EXIST SVC (
 REM SlicerVideoCameras build
 mkdir SVC%1
 pushd SVC%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/inner-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 ../SVC
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/inner-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 ../SVC
 cmake --build . --config %2
 popd
 
@@ -140,7 +140,7 @@ IF EXIST Seq (
 REM Sequences build
 mkdir Seq%1
 pushd Seq%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../Seq
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../Seq
 cmake --build . --config %2
 popd
 
@@ -158,7 +158,7 @@ IF EXIST SIGSIO (
 REM IGSIO build
 mkdir SIGSIO%1
 pushd SIGSIO%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSequences_DIR:PATH=C:/d/Slcr/Seq%1 ../SIGSIO
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSequences_DIR:PATH=C:/d/Slcr/Seq%1 ../SIGSIO
 cmake --build . --config %2
 popd
 
@@ -176,7 +176,7 @@ IF EXIST SVR (
 REM SlicerVirtualReality build
 mkdir SVR%1
 pushd SVR%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SVR
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SVR
 cmake --build . --config %2
 popd
 
@@ -194,7 +194,7 @@ IF EXIST SV (
 REM SlicerVASST build
 mkdir SVa%1
 pushd SVa%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVirtualReality_DIR:PATH=C:/d/Slcr/SVR%1/inner-build -DSequences_DIR:PATH=C:/d/Slcr/Seq%1/ -DSlicerOpenCV_DIR:PATH=c:/d/Slcr/SCV%1/inner-build ../SV
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVirtualReality_DIR:PATH=C:/d/Slcr/SVR%1/inner-build -DSequences_DIR:PATH=C:/d/Slcr/Seq%1/ -DSlicerOpenCV_DIR:PATH=c:/d/Slcr/SCV%1/inner-build ../SV
 cmake --build . --config %2
 popd
 
@@ -212,7 +212,7 @@ IF EXIST SRT (
 REM SlicerRT build
 mkdir SRT%1
 pushd SRT%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SRT
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SRT
 cmake --build . --config %2
 popd
 
@@ -230,7 +230,7 @@ IF EXIST SO (
 REM SlicerOsirix build
 mkdir SO%1
 pushd SO%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerRT_DIR:PATH=C:/d/Slcr/SRT%1/inner-build ../SO
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerRT_DIR:PATH=C:/d/Slcr/SRT%1/inner-build ../SO
 cmake --build . --config %2
 popd
 
@@ -248,7 +248,7 @@ IF EXIST SL (
 REM SlicerLeapMotion build
 mkdir SL%1
 pushd SL%1
-cmake -G "Visual Studio 15 2017 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVideoCameras_DIR:PATH=C:/d/Slcr/SVC%1/ ../SL
+cmake -G "Visual Studio 16 2019 Win64" -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVideoCameras_DIR:PATH=C:/d/Slcr/SVC%1/ ../SL
 cmake --build . --config %2
 popd
 
