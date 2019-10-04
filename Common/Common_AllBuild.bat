@@ -254,4 +254,22 @@ powershell -command "& { cmake -G "Visual Studio 16 2019" -A x64 -T v140 -DSlice
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SL%2_Build_Log.txt }"
 popd
 
+REM SlicerAugmentedReality
+IF EXIST SA (
+  IF [%3] == ["update"] (
+    pushd SA
+    git pull origin master
+    popd
+  )
+) ELSE (
+  git clone https://github.com/VASST/SlicerAugmentedReality.git SA
+)
+
+REM SlicerAugmentedReality build
+mkdir SAR%1
+pushd SAR%1
+powershell -command "& { cmake -G "Visual Studio 16 2019" -A x64 -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerVirtualReality_DIR:PATH=C:/d/Slcr/SVR%1/inner-build ../SA | tee ..\Logs\SAR%2_Configure_Log.txt }"
+powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SAR%2_Build_Log.txt }"
+popd
+
 pause
