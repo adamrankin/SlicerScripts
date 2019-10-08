@@ -1,0 +1,1 @@
+call ./Common/Common_Ext_VisualStudio.bat D .\SARD\AdditionalLauncherSettings.ini .\SARD\SlicerAugmentedReality.sln
