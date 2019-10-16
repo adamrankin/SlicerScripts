@@ -1,7 +1,7 @@
 @echo off
 
-copy C:\d\Slcr\SCV%1\bin\%2\ITKVideoBridgeOpenCV-5.0.dll C:\d\Slcr\SCV%1\inner-build\lib\Slicer-4.11\qt-loadable-modules\%2 /Y
-copy C:\d\Slcr\SCV%1\OpenCV-install\x64\vc14\bin\opencv_ffmpeg346_64.dll C:\d\Slcr\SCV%1\inner-build\lib\Slicer-4.11\qt-loadable-modules\%2 /Y
+copy C:\d\Slcr\SCV%1\bin\%2\ITKVideoBridgeOpenCV-*.dll C:\d\Slcr\SCV%1\inner-build\lib\Slicer-4.11\qt-loadable-modules\%2 /Y
+copy C:\d\Slcr\SCV%1\OpenCV-install\x64\vc14\bin\opencv_ffmpeg*.dll C:\d\Slcr\SCV%1\inner-build\lib\Slicer-4.11\qt-loadable-modules\%2 /Y
 
 copy C:\d\Slcr\SIGSIO%1\bin\%2\*.dll C:\d\Slcr\SIGSIO%1\inner-build\lib\Slicer-4.11\qt-loadable-modules\%2 /Y
 
