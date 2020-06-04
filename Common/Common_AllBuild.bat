@@ -128,24 +128,6 @@ powershell -command "& { cmake -G "Visual Studio 16 2019" -A x64 -T v140 -DSlice
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SVC%2_Build_Log.txt }"
 popd
 
-REM Sequences
-IF EXIST Seq (
-  IF [%3] == ["update"] (
-    pushd Seq
-    git pull origin master
-    popd
-  )
-) ELSE (
-  git clone https://github.com/SlicerRt/Sequences.git Seq
-)
-
-REM Sequences build
-mkdir Seq%1
-pushd Seq%1
-powershell -command "& { cmake -G "Visual Studio 16 2019" -A x64 -T v140 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../Seq | tee ..\Logs\Seq%2_Configure_Log.txt }"
-powershell -command "& { cmake --build . --config %2 | tee ..\Logs\Seq%2_Build_Log.txt }"
-popd
-
 REM IGSIO
 IF EXIST SIGSIO (
   IF [%3] == ["update"] (
