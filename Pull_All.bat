@@ -6,7 +6,7 @@ IF EXIST S4 (
   git pull origin master
   popd
 ) ELSE (
-  git clone https://github.com/Slicer/Slicer.git S4
+  git clone https://github.com/Slicer/Slicer S4
 )
 
 REM VASSTAlgorithms
@@ -15,7 +15,7 @@ IF EXIST VA (
   git pull origin master
   popd
 ) ELSE (
-    git clone https://github.com/VASST/VASSTAlgorithms.git VA
+    git clone https://github.com/VASST/VASSTAlgorithms VA
 )
 
 REM SlicerOpenCV 
@@ -24,7 +24,7 @@ IF EXIST SCV (
   git pull origin master
   popd
 ) ELSE (
-  git clone https://github.com/Slicer/SlicerOpenCV.git SCV
+  git clone https://github.com/Slicer/SlicerOpenCV SCV
 )
 
 REM SlicerIGT 
@@ -33,7 +33,7 @@ IF EXIST SIGT (
   git pull origin master
   popd
 ) ELSE (
-  git clone https://github.com/SlicerIGT/SlicerIGT.git SIGT
+  git clone https://github.com/SlicerIGT/SlicerIGT SIGT
 )
 
 REM SlicerOpenIGTLink
@@ -42,7 +42,7 @@ IF EXIST SOIGT (
   git pull origin master
   popd
 ) ELSE (
-  git clone https://github.com/openigtlink/SlicerOpenIGTLink.git SOIGT
+  git clone https://github.com/openigtlink/SlicerOpenIGTLink SOIGT
 )
 
 REM SlicerDebuggingTools
@@ -51,7 +51,7 @@ IF EXIST SDT (
   git pull origin master
   popd
 ) ELSE (
-  git clone https://github.com/SlicerRt/SlicerDebuggingTools.git SDT
+  git clone https://github.com/SlicerRt/SlicerDebuggingTools SDT
 )
 
 REM SlicerCamera
@@ -60,7 +60,7 @@ IF EXIST SVC (
   git pull origin master
   popd
 ) ELSE (
-  git clone https://github.com/VASST/SlicerVideoCameras.git SVC
+  git clone https://github.com/VASST/SlicerVideoCameras SVC
 )
 
 REM SlicerAugmentedReality
@@ -69,7 +69,7 @@ IF EXIST SAR (
   git pull origin master
   popd
 ) ELSE (
-  git clone https://github.com/VASST/SlicerAugmentedReality.git SAR
+  git clone https://github.com/VASST/SlicerAugmentedReality SAR
 )
 
 REM SlicerVASST
