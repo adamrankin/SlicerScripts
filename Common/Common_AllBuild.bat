@@ -2,24 +2,6 @@
 
 mkdir Logs
 
-REM Slicer4
-IF EXIST S4 (
-  IF [%3] == [update_all] (
-    pushd S4
-    git pull origin master
-    popd
-  )
-) ELSE (
-  git clone https://github.com/Slicer/Slicer.git S4
-)
-
-REM Slicer4 build
-mkdir S4%1
-pushd S4%1
-powershell -command "& { cmake -G 'Visual Studio 16 2019' -A x64 -T v140 -DQt5_DIR:PATH=D:/Qt/5.12.0/msvc2017_64/lib/cmake/Qt5 -DCMAKE_CXX_MP_FLAG:BOOL=ON ../S4 | tee ..\Logs\Slicer4_%2_Configure_Log.txt }"
-powershell -command "& { cmake --build . --config %2 | tee ..\Logs\Slicer4_%2_Build_Log.txt }"
-popd
-
 REM VASSTAlgorithms
 IF EXIST VA (
   IF "%3" == "update" (
