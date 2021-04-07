@@ -219,14 +219,14 @@ powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SL%2_Build_Lo
 popd
 
 REM SlicerAugmentedReality
-IF EXIST SA (
+IF EXIST SAR (
   IF [%3] == ["update"] (
-    pushd SA
+    pushd SAR
     git pull origin master
     popd
   )
 ) ELSE (
-  git clone https://github.com/VASST/SlicerAugmentedReality.git SA
+  git clone https://github.com/VASST/SlicerAugmentedReality.git SAR
 )
 
 REM SlicerAugmentedReality build
