@@ -3,7 +3,8 @@
 mkdir Logs
 
 REM Slicer build
-pushd S4R/Slicer-build
+pushd S4R
+cd Slicer-build
 powershell -command "& { cmake --build . --config Release --target PACKAGE | tee ..\Logs\SlicerRelease_Package_Log.txt }"
 popd
 
