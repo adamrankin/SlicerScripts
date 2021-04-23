@@ -92,22 +92,22 @@ powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SDT%2_Build_Log.txt }"
 popd
 
-REM SlicerVideoCameras
-IF EXIST SVC (
+REM SlicerPinholeCameras
+IF EXIST SPC (
   IF [%3] == ["update"] (
-    pushd SVC
+    pushd SPC
     git pull origin master
     popd
   )
 ) ELSE (
-  git clone https://github.com/VASST/SlicerVideoCameras.git SVC
+  git clone https://github.com/VASST/SlicerPinholeCameras.git SPC
 )
 
-REM SlicerVideoCameras build
-mkdir SVC%1
-pushd SVC%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/inner-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 ../SVC | tee ..\Logs\SVC%2_Configure_Log.txt }"
-powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SVC%2_Build_Log.txt }"
+REM SlicerPinholeCameras build
+mkdir SPC%1
+pushd SPC%1
+powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/inner-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 ../SPC | tee ..\Logs\SPC%2_Configure_Log.txt }"
+powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SPC%2_Build_Log.txt }"
 popd
 
 REM IGSIO
@@ -214,7 +214,7 @@ IF EXIST SL (
 REM SlicerLeapMotion build
 mkdir SL%1
 pushd SL%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVideoCameras_DIR:PATH=C:/d/Slcr/SVC%1/ -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/ ../SL | tee ..\Logs\SL%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVideoCameras_DIR:PATH=C:/d/Slcr/SPC%1/ -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/ ../SL | tee ..\Logs\SL%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SL%2_Build_Log.txt }"
 popd
 
@@ -232,7 +232,7 @@ IF EXIST SAR (
 REM SlicerAugmentedReality build
 mkdir SAR%1
 pushd SAR%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerVirtualReality_DIR:PATH=C:/d/Slcr/SVR%1/inner-build -DSlicerVideoCameras_DIR:PATH=C:/d/Slcr/SVC%1 ../SA | tee ..\Logs\SAR%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerVirtualReality_DIR:PATH=C:/d/Slcr/SVR%1/inner-build -DSlicerPinholeCameras_DIR:PATH=C:/d/Slcr/SPC%1 ../SA | tee ..\Logs\SAR%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SAR%2_Build_Log.txt }"
 popd
 
