@@ -16,7 +16,7 @@ IF EXIST VA (
 REM VASSTAlgorithms build
 mkdir VA%1
 pushd VA%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../VA | tee ..\Logs\VA%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../VA | tee ..\Logs\VA%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\VA%2_Build_Log.txt }"
 popd
 
@@ -34,7 +34,7 @@ IF EXIST SCV (
 REM SlicerOpenCV build
 mkdir SCV%1
 pushd SCV%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicer_CUDA_GENERATION:STRING=Pascal ../SCV | tee ..\Logs\SCV%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicer_CUDA_GENERATION:STRING=Pascal ../SCV | tee ..\Logs\SCV%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SCV%2_Build_Log.txt }"
 popd
 
@@ -52,7 +52,7 @@ IF EXIST SIGT (
 REM SlicerIGT build
 mkdir SIGT%1
 pushd SIGT%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SIGT | tee ..\Logs\SIGT%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SIGT | tee ..\Logs\SIGT%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SIGT%2_Build_Log.txt }"
 popd
 
@@ -70,7 +70,7 @@ IF EXIST SOIGT (
 REM SlicerOpenIGTLink build
 mkdir SOIGT%1
 pushd SOIGT%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SOIGT | tee ..\Logs\SOIGT%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SOIGT | tee ..\Logs\SOIGT%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SOIGT%2_Build_Log.txt }"
 popd
 
@@ -88,7 +88,7 @@ IF EXIST SDT (
 REM SlicerDebuggingTools build
 mkdir SDT%1
 pushd SDT%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SDT | tee ..\Logs\SDT%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SDT | tee ..\Logs\SDT%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SDT%2_Build_Log.txt }"
 popd
 
@@ -106,7 +106,7 @@ IF EXIST SPC (
 REM SlicerPinholeCameras build
 mkdir SPC%1
 pushd SPC%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/inner-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 ../SPC | tee ..\Logs\SPC%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/inner-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 ../SPC | tee ..\Logs\SPC%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SPC%2_Build_Log.txt }"
 popd
 
@@ -124,7 +124,7 @@ IF EXIST SIGSIO (
 REM IGSIO build
 mkdir SIGSIO%1
 pushd SIGSIO%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSequences_DIR:PATH=C:/d/Slcr/Seq%1 ../SIGSIO | tee ..\Logs\SIGSIO%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSequences_DIR:PATH=C:/d/Slcr/Seq%1 ../SIGSIO | tee ..\Logs\SIGSIO%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SIGSIO%2_Build_Log.txt }"
 popd
 
@@ -142,7 +142,7 @@ IF EXIST SVR (
 REM SlicerVirtualReality build
 mkdir SVR%1
 pushd SVR%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SVR | tee ..\Logs\SVR%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SVR | tee ..\Logs\SVR%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SVR%2_Build_Log.txt }"
 popd
 
@@ -160,7 +160,7 @@ IF EXIST SV (
 REM SlicerVASST build
 mkdir SVa%1
 pushd SVa%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVirtualReality_DIR:PATH=C:/d/Slcr/SVR%1/inner-build -DSequences_DIR:PATH=C:/d/Slcr/Seq%1/ -DSlicerOpenCV_DIR:PATH=c:/d/Slcr/SCV%1/inner-build ../SV | tee ..\Logs\SV%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerIGT_DIR:PATH=C:/d/Slcr/SIGT%1 -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVirtualReality_DIR:PATH=C:/d/Slcr/SVR%1/inner-build -DSequences_DIR:PATH=C:/d/Slcr/Seq%1/ -DSlicerOpenCV_DIR:PATH=c:/d/Slcr/SCV%1/inner-build ../SV | tee ..\Logs\SV%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SV%2_Build_Log.txt }"
 popd
 
@@ -178,7 +178,7 @@ IF EXIST SRT (
 REM SlicerRT build
 mkdir SRT%1
 pushd SRT%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SRT | tee ..\Logs\SRT%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build ../SRT | tee ..\Logs\SRT%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SRT%2_Build_Log.txt }"
 popd
 
@@ -196,7 +196,7 @@ IF EXIST SO (
 REM SlicerOsirix build
 mkdir SO%1
 pushd SO%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerRT_DIR:PATH=C:/d/Slcr/SRT%1/inner-build ../SO | tee ..\Logs\SO%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerRT_DIR:PATH=C:/d/Slcr/SRT%1/inner-build ../SO | tee ..\Logs\SO%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SO%2_Build_Log.txt }"
 popd
 
@@ -214,7 +214,7 @@ IF EXIST SL (
 REM SlicerLeapMotion build
 mkdir SL%1
 pushd SL%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVideoCameras_DIR:PATH=C:/d/Slcr/SPC%1/ -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/ ../SL | tee ..\Logs\SL%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DVASSTAlgorithms_DIR:PATH=C:/d/Slcr/VA%1 -DSlicerVideoCameras_DIR:PATH=C:/d/Slcr/SPC%1/ -DSlicerOpenCV_DIR:PATH=C:/d/Slcr/SCV%1/ ../SL | tee ..\Logs\SL%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SL%2_Build_Log.txt }"
 popd
 
@@ -232,7 +232,7 @@ IF EXIST SAR (
 REM SlicerAugmentedReality build
 mkdir SAR%1
 pushd SAR%1
-powershell -command "& { cmake -G \"Visual Studio 16 2019\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerVirtualReality_DIR:PATH=C:/d/Slcr/SVR%1/inner-build -DSlicerPinholeCameras_DIR:PATH=C:/d/Slcr/SPC%1 ../SA | tee ..\Logs\SAR%2_Configure_Log.txt }"
+powershell -command "& { cmake -G \"Visual Studio 17 2022\" -A x64 -DSlicer_DIR:PATH=C:/d/Slcr/S4%1/Slicer-build -DSlicerVirtualReality_DIR:PATH=C:/d/Slcr/SVR%1/inner-build -DSlicerPinholeCameras_DIR:PATH=C:/d/Slcr/SPC%1 ../SA | tee ..\Logs\SAR%2_Configure_Log.txt }"
 powershell -command "& { cmake --build . --config %2 | tee ..\Logs\SAR%2_Build_Log.txt }"
 popd
 
